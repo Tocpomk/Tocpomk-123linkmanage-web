@@ -1,0 +1,93 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3009792",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "4812787",
+      "name": "双箭头",
+      "font_class": "shuangjiantou-copy-copy-copy",
+      "unicode": "e519",
+      "unicode_decimal": 58649
+    },
+    {
+      "icon_id": "5320519",
+      "name": "太阳",
+      "font_class": "taiyang",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "5387907",
+      "name": "按钮_箭头向左_o",
+      "font_class": "anniu_jiantouxiangzuo_o",
+      "unicode": "eb89",
+      "unicode_decimal": 60297
+    },
+    {
+      "icon_id": "5387913",
+      "name": "按钮-箭头向右_o",
+      "font_class": "anniu-jiantouxiangyou_o",
+      "unicode": "eb8c",
+      "unicode_decimal": 60300
+    },
+    {
+      "icon_id": "7964508",
+      "name": "修改",
+      "font_class": "xiugai",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "8046840",
+      "name": "gouxuankuang",
+      "font_class": "gouxuankuang",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "10018833",
+      "name": "双箭头",
+      "font_class": "shuangjiantou",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "11372693",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    },
+    {
+      "icon_id": "13066537",
+      "name": "勾选框勾选",
+      "font_class": "gouxuankuanggouxuan",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "25964415",
+      "name": "导出",
+      "font_class": "daochu",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "29946204",
+      "name": "月亮",
+      "font_class": "yueliang",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    }
+  ]
+}

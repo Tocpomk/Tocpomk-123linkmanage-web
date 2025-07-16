@@ -1,0 +1,94 @@
+/* 通用按钮交互动画 */
+button, .pagination-btn, .filter-btn, .link-search-btn {
+    transition: background 0.25s cubic-bezier(.4,0,.2,1),
+                color 0.18s cubic-bezier(.4,0,.2,1),
+                border 0.22s cubic-bezier(.4,0,.2,1),
+                box-shadow 0.22s cubic-bezier(.4,0,.2,1),
+                transform 0.18s cubic-bezier(.4,0,.2,1);
+}
+button:active, .pagination-btn:active, .filter-btn:active, .link-search-btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+}
+button:hover, .pagination-btn:hover, .filter-btn:hover, .link-search-btn:hover {
+    box-shadow: 0 4px 16px rgba(0,123,255,0.13);
+}
+
+/* 输入框聚焦动画 */
+input[type="text"], input[type="number"], .link-search-input, .pagination-size-select, .filter-type-select {
+    transition: border 0.22s cubic-bezier(.4,0,.2,1),
+                box-shadow 0.22s cubic-bezier(.4,0,.2,1),
+                background 0.22s cubic-bezier(.4,0,.2,1);
+}
+input:focus, .link-search-input:focus, .pagination-size-select:focus, .filter-type-select:focus {
+    box-shadow: 0 2px 8px #007bff22;
+    border-color: #007bff;
+}
+
+/* iconfont图标按钮动画 */
+.iconfont, .search-icon-img {
+    transition: color 0.18s cubic-bezier(.4,0,.2,1),
+                filter 0.18s cubic-bezier(.4,0,.2,1),
+                transform 0.18s cubic-bezier(.4,0,.2,1);
+}
+.iconfont:active, .search-icon-img:active {
+    transform: scale(0.92);
+} 
+
+/* 弹窗动画（通知、确认、输入弹窗） */
+.notification, .custom-prompt-modal, .custom-confirm-modal {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+    transition: opacity 0.32s cubic-bezier(.4,0,.2,1),
+                transform 0.32s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+}
+.notification.show, .custom-prompt-modal.show, .custom-confirm-modal.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* 下拉菜单动画（聚焦时有弹性阴影） */
+select:focus, .pagination-size-select:focus, .filter-type-select:focus {
+    box-shadow: 0 4px 16px #007bff22;
+    border-color: #007bff;
+    transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), border 0.22s cubic-bezier(.4,0,.2,1);
+}
+
+/* 明暗主题切换动画 */
+body, .container, .sidebar, .main-content, .link-input-section, .link-table-section, .file-list li, .link-table, .table-header, .button-group button, .filter-btn, .pagination-btn, .link-search-btn, .link-search-input, .filter-type-select, .pagination-size-select {
+    transition: background 0.38s cubic-bezier(.4,0,.2,1),
+                color 0.28s cubic-bezier(.4,0,.2,1),
+                border 0.28s cubic-bezier(.4,0,.2,1),
+                box-shadow 0.28s cubic-bezier(.4,0,.2,1);
+} 
+
+/* 弹窗弹性跳出动画 */
+@keyframes modal-bounce-in {
+    0% { opacity: 0; transform: scale(0.8) translateY(-40px); }
+    60% { opacity: 1; transform: scale(1.08) translateY(8px); }
+    80% { transform: scale(0.97) translateY(-4px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.custom-prompt-modal.show, .custom-confirm-modal.show, .notification.show {
+    animation: modal-bounce-in 0.48s cubic-bezier(.22,1.2,.36,1) both;
+}
+
+/* 主题切换波纹动画 */
+.theme-ripple {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    border-radius: 50%;
+    background: var(--theme-ripple-color, #007bff);
+    transform: scale(0);
+    opacity: 0.25;
+    animation: theme-ripple-animate 0.7s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes theme-ripple-animate {
+    to {
+        transform: scale(40);
+        opacity: 0;
+    }
+} 

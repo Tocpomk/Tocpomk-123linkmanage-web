@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON秒传链接工具</title>
+    <link rel="stylesheet" href="css/transition-animations.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+</head>
+<body>
+    <div class="container">
+      <div class="side-title-layout">
+        <div class="vertical-title" id="mobile-title-bar">
+          <img src="img/icn.png" alt="logo" class="logo-img" />
+          <span class="vertical-title-text">JSON秒传链接工具</span>
+          <button id="theme-toggle-btn" class="theme-toggle-btn" title="切换明暗模式">
+            <span class="iconfont icon-taiyang" id="theme-icon"></span>
+          </button>
+        </div>
+        <div class="app-layout">
+          <!-- 侧边栏 - JSON文件列表 -->
+          <div class="sidebar">
+            <h2>JSON文件</h2>
+            <div class="button-group" style="flex-direction:column;align-items:flex-start;gap:6px;">
+              <div style="display:flex;gap:8px;">
+                <button id="remove-json-btn" disabled>移除选中</button>
+                <button id="add-json-btn">添加JSON</button>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <button id="merge-files-btn">文件合并</button>
+                <button id="compare-files-btn">文件对比</button>
+              </div>
+            </div>
+            <div id="drop-area" class="drop-area">
+              <p>拖放JSON文件到这里</p>
+            </div>
+            <div style="margin: 10px 0 2px 0; display: flex; align-items: center;">
+              <span id="select-all-files" class="iconfont icon-gouxuankuang" style="margin-right:8px;vertical-align:middle;cursor:pointer;font-size:18px;"></span>
+              <span id="select-all-files-label" style="font-size:14px;">全选</span>
+              <div id="filter-bar" class="filter-bar">
+                <select id="filter-type-select" class="filter-type-select">
+                  <option value="compare">对比文件</option>
+                </select>
+                <button id="filter-selected-btn" class="filter-btn" title="筛选">筛选</button>
+              </div>
+            </div>
+            <ul id="json-file-list" class="file-list">
+              <!-- 文件列表将通过JavaScript动态生成 -->
+            </ul>
+          </div>
+          <!-- 主内容区 -->
+          <div class="main-content">
+            <!-- 链接输入区 -->
+            <div class="link-input-section">
+              <h2>秒传链接</h2>
+              <div class="link-input-container">
+                <textarea id="link-input" placeholder="在此粘贴秒传链接..."></textarea>
+              </div>
+              <div class="link-actions">
+                <button id="paste-link-btn">粘贴秒链</button>
+                <button id="clear-link-btn">清空秒链</button>
+                <button id="parse-link-btn">解析链接</button>
+                <button id="add-to-json-btn" disabled>添加到JSON</button>
+              </div>
+            </div>
+            <!-- 链接表格区 -->
+            <div class="link-table-section">
+              <div class="table-header">
+                <h2>链接列表</h2>
+                <div class="link-search-bar">
+                  <button id="link-search-btn" class="link-search-btn" title="搜索"><img src="img/sousuo.svg" alt="搜索" class="search-icon-img" /></button>
+                  <input id="link-search-input" class="link-search-input" type="text" placeholder="搜索秒链..." />
+                  <button id="clear-search-btn" class="clear-search-btn" title="清空搜索" style="display: none;">×</button>
+                </div>
+                <div class="table-actions">
+                  <button id="sort-links-btn">秒链排序</button>
+                  <button id="export-selected-btn" disabled>导出选中</button>
+                  <button id="export-all-btn" disabled>导出全部</button>
+                  <button id="delete-all-links-btn">删除选中</button>
+                </div>
+              </div>
+              <table id="link-table" class="link-table">
+                <thead>
+                  <tr>
+                    <th><span id="select-all" class="iconfont icon-gouxuankuang" style="cursor:pointer;font-size:18px;"></span></th>
+                    <th>文件名</th>
+                    <th>大小</th>
+                    <th>链接</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 链接列表将通过JavaScript动态生成 -->
+                </tbody>
+              </table>
+              <!-- 分页UI容器 -->
+              <div id="pagination-container" style="margin: 24px 0 0 0;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="js/linkParser.js"></script>
+    <script src="js/jsonManager.js"></script>
+    <script src="js/uiUtils.js"></script>
+    <script src="js/eventHandlers.js"></script>
+    <script src="js/linkTableSort.js"></script>
+    <script src="js/uiHandler.js"></script>
+    <script src="js/fileMerger.js"></script>
+    <script src="js/fileComparer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/linkTableEnhance.js"></script>
+    <script src="js/linkTablePagination.js"></script>
+    <script src="js/linkSearch.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    if(window.initLinkTableEnhance) window.initLinkTableEnhance();
+});
+</script>
+</body>
+</html>
